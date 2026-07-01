@@ -1,0 +1,16 @@
+#
+# Changes to this file will be overwritten by `trmnlp pull`.
+#
+# Docs: https://help.trmnl.com/en/articles/10542599-importing-and-exporting-private-plugins#h_581fb988f0
+#
+---
+strategy: static
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: '{"stop":"The Busway Railway Station (Stop 1)","updated_at":"23:49 on 22/05/26","departures":[{"bus":"A","direction":"Trumpington The Busway Trumpington Park-and-Ride","due":"05:30","status":"On time"},{"bus":"A","direction":"Trumpington The Busway Trumpington Park-and-Ride","due":"06:30","status":"On time"},{"bus":"A","direction":"Trumpington The Busway Trumpington Park-and-Ride","due":"07:00","status":"On time"},{"bus":"A","direction":"Trumpington The Busway Trumpington Park-and-Ride","due":"07:30","status":"On time"},{"bus":"U2","direction":"Addenbrookes","due":"07:47","status":"On time"}]}'
+polling_verb: get
+framework_version: latest
+polling_url: ''
+polling_headers: ''
+name: Bus Departures (Nicola)
+refresh_interval: 1440

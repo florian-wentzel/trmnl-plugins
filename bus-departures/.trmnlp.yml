@@ -1,0 +1,22 @@
+# TRMNLP configuration
+# {{ env.VARIABLE }} interpolation is available here
+---
+# auto-reload when files change (`watch: false` to disable)
+watch:
+  - .trmnlp.yml
+  - src
+
+# values of custom fields (defined in src/settings.yml)
+custom_fields: {}
+
+# override variables (local preview data; mirrors settings.yml static_data)
+variables:
+  trmnl: {}
+  stop: The Busway Railway Station (Stop 1)
+  updated_at: 23:49 on 22/05/26
+  departures:
+    - { bus: A, direction: Trumpington The Busway Trumpington Park-and-Ride, due: '05:30', status: On time }
+    - { bus: A, direction: Trumpington The Busway Trumpington Park-and-Ride, due: '06:30', status: On time }
+    - { bus: A, direction: Trumpington The Busway Trumpington Park-and-Ride, due: '07:00', status: On time }
+    - { bus: A, direction: Trumpington The Busway Trumpington Park-and-Ride, due: '07:30', status: On time }
+    - { bus: U2, direction: Addenbrookes, due: '07:47', status: On time }
