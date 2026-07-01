@@ -1,0 +1,17 @@
+{%- comment -%}
+  WiFi Signal Switcher — routing only. The two states live in shared.liquid
+  as captures: {{ state_bus }} and {{ state_pomodoro }}.
+
+  Driver: trmnl.device.wifi_strength — integer 0-3 bars
+  (0=none, 1=weak, 2=moderate, 3=strong; null in local preview -> mock it).
+  cutoff: signal_cutoff custom field (number, default 2). Mapping:
+    strong signal (bars >= cutoff) -> Bus departures
+    weak   signal (bars <  cutoff) -> Pomodoro timer
+
+  cutoff resolution: bare keyname works on TRMNL/LaraPaper prod; the
+  custom_fields_values path works in trmnlp local; default 2 if neither.
+  plus: 0 coerces the (possibly string) value so >= is a numeric compare.
+{%- endcomment -%}
+{% assign cutoff = signal_cutoff | default: trmnl.plugin_settings.custom_fields_values.signal_cutoff | default: 2 | plus: 0 %}
+{% assign bars = trmnl.device.wifi_strength | default: 0 | plus: 0 %}
+{% if bars >= cutoff %}{{ state_bus }}{% else %}{{ state_pomodoro }}{% endif %}

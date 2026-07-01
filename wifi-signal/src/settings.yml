@@ -1,0 +1,23 @@
+#
+# Changes to this file will be overwritten by `trmnlp pull`.
+#
+# Docs: https://help.trmnl.com/en/articles/10542599-importing-and-exporting-private-plugins#h_581fb988f0
+#
+---
+strategy: static
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: '{"stop":"The Busway Railway Station (Stop 1)","updated_at":"23:49 on 22/05/26","departures":[{"bus":"A","direction":"Trumpington The Busway Trumpington Park-and-Ride","due":"05:30","status":"On time"},{"bus":"A","direction":"Trumpington The Busway Trumpington Park-and-Ride","due":"06:30","status":"On time"},{"bus":"A","direction":"Trumpington The Busway Trumpington Park-and-Ride","due":"07:00","status":"On time"},{"bus":"A","direction":"Trumpington The Busway Trumpington Park-and-Ride","due":"07:30","status":"On time"},{"bus":"U2","direction":"Addenbrookes","due":"07:47","status":"On time"}]}'
+framework_version: latest
+name: WiFi Switcher (Nicola)
+refresh_interval: 900
+custom_fields:
+- keyname: signal_cutoff
+  field_type: number
+  name: Signal Cutoff (bars)
+  description: Bus shows when wifi_strength is at or above this; Pomodoro below it.
+  help_text: Device reports 0-3 bars. 0=none, 1=weak, 2=moderate, 3=strong.
+  default: 2
+  min: 1
+  max: 3
+  step: 1

@@ -1,0 +1,28 @@
+<div class="layout">
+  <table class="table" data-table-limit="true">
+    <thead>
+      <tr>
+        <th><span class="title title--small">Bus</span></th>
+        <th><span class="title title--small">Direction</span></th>
+        <th><span class="title title--small">Due</span></th>
+        <th><span class="title title--small">Status</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for d in departures %}
+      <tr>
+        <td><span class="label text--bold value--tnums">{{ d.bus }}</span></td>
+        <td><span class="label" data-clamp="1">{{ d.direction }}</span></td>
+        <td><span class="label value--tnums">{{ d.due }}</span></td>
+        <td><span class="label">{{ d.status }}</span></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="title_bar">
+  <img class="image" src="https://trmnl.com/images/plugins/trmnl--render.svg">
+  <span class="title">{{ stop }}</span>
+  <span class="instance">{{ updated_at }}</span>
+</div>

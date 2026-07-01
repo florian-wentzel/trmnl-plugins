@@ -1,0 +1,71 @@
+{% comment %}
+  Reusable display states for the WiFi-strength switcher.
+  shared.liquid is auto-prepended to every size template, so these captures are
+  available in full.liquid (and the other sizes). full.liquid picks one.
+{% endcomment %}
+
+{% capture state_pomodoro %}
+<div class="layout layout--col layout--center gap">
+  <div class="text--center">
+    <span class="label label--gray text--uppercase">Time to focus</span>
+  </div>
+  <div class="outline w--[470px] p--1">
+    <div class="grid grid--cols-3 gap--small">
+      <div class="bg--black rounded text--center py--1">
+        <span class="label text--white text--bold">Pomodoro</span>
+      </div>
+      <div class="text--center py--1">
+        <span class="label text--gray-60">Short Break</span>
+      </div>
+      <div class="text--center py--1">
+        <span class="label text--gray-60">Long Break</span>
+      </div>
+    </div>
+  </div>
+  <svg width="200" height="200" viewBox="0 0 208 208" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="104" cy="104" r="90" fill="none" stroke="#c8c8c8" stroke-width="10"/>
+    <circle cx="104" cy="14" r="9" fill="#000000"/>
+    <text x="104" y="104" text-anchor="middle" dominant-baseline="central"
+          font-family="Inter, Helvetica, Arial, sans-serif" font-weight="700" font-size="52"
+          fill="#000000">25:00</text>
+  </svg>
+  <div class="bg--black rounded px--8 py--2">
+    <span class="label text--white text--bold text--uppercase">Start</span>
+  </div>
+</div>
+<div class="title_bar">
+  <img class="image" src="https://trmnl.com/images/plugins/trmnl--render.svg">
+  <span class="title">Pomodoro</span>
+  <span class="instance">Focus timer</span>
+</div>
+{% endcapture %}
+
+{% capture state_bus %}
+<div class="layout">
+  <table class="table" data-table-limit="true">
+    <thead>
+      <tr>
+        <th><span class="title title--small">Bus</span></th>
+        <th><span class="title title--small">Direction</span></th>
+        <th><span class="title title--small">Due</span></th>
+        <th><span class="title title--small">Status</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for d in departures %}
+      <tr>
+        <td><span class="label text--bold value--tnums">{{ d.bus }}</span></td>
+        <td><span class="label" data-clamp="1">{{ d.direction }}</span></td>
+        <td><span class="label value--tnums">{{ d.due }}</span></td>
+        <td><span class="label">{{ d.status }}</span></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div class="title_bar">
+  <img class="image" src="https://trmnl.com/images/plugins/trmnl--render.svg">
+  <span class="title">{{ stop }}</span>
+  <span class="instance">{{ updated_at }}</span>
+</div>
+{% endcapture %}
