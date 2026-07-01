@@ -32,7 +32,7 @@ def fetch_rust_mc_server(input):
 
 COUNTERS = {"student_telegram": fetch_student_telegram, "rust_mc_server": fetch_rust_mc_server}
 
-MEME_ENDPOINT = "https://your-meme-endpoint.example.com/meme"
+MEME_ENDPOINT = "https://meme.hpi.church/meme?days=7"
 
 
 def fetch_random(input):

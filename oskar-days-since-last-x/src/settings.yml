@@ -21,8 +21,8 @@ custom_fields:
     field_type: select
     name: Display Mode
     options:
-      - "Days Since Last X: days_since"
-      - "Meme of the Week: meme"
+      - days_since
+      - meme
     default: days_since
     conditional_validation:
       - when: "days_since"
